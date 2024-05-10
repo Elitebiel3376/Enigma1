@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pagina 1</title>
+  <style>
+    body {
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 100px;
+      margin-top: 100px;
+      color: red;
+      position: relative;
+    }
+
+     h8 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      text-align: center;
+    } 
+
+    img {
+      max-width: 80%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 20px;
+      margin-bottom: 200px;
+      text-align: center;
+    }
+
+    input {
+      padding: 5px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 4px;
+      margin-bottom: 10px;
+    }
+
+    #iconeDica {
+      position: fixed;
+      top: 25px;
+      right: 15px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+
+    #caixaDica {
+      display: none;
+      position: fixed;
+      top: 70px;
+      right: 45px;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      color: black;
+      font-size: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+ <h6>HUM.....EMBRO!</h6>
+  <img src="foto2.png" alt="DESCRIÇÃO DA IMAGEM" title="TÍTULO DA IMAGEM">
+  <p>❝PRESTE MUITA ATEÇÃO❞</p>
+  
+  <label for="resposta"><i>Resposta:</i></label>
+  <input type="text" id="resposta" name="resposta">
+  <br>
+  <button onclick="verificarResposta()">Enviar</button>
+
+  <img id="iconeDica" src="Lâmpada3.png" alt="Ícone de Dica" onclick="exibirDica()">
+  <div id="caixaDica">Dica: Ligando para Enigma</div>
+
+  <script>
+    function verificarResposta() {
+      var respostaInserida = document.getElementById("resposta").value.toLowerCase();
+      var respostaCorreta = "membro"; 
+
+      if (respostaInserida === respostaCorreta) {
+        window.location.href = "pagina2.html"; 
+      } else {
+        alert("tente novamente meu nobre.");
+      }
+    }
+
+    function exibirDica() {
+      var caixaDica = document.getElementById("caixaDica");
+      caixaDica.style.display = "block";
+      setTimeout(function() {
+        caixaDica.style.display = "none";
+      }, 5000);
+    }
+  </script>
+</body>
+</html>

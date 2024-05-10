@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Notebook</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: black;
+    }
+    .login-container {
+        width: 300px;
+        text-align: center;
+    }
+    input[type="password"] {
+        padding: 10px;
+        margin: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: white;
+        color: red;
+        border: none;
+        cursor: pointer;
+    }
+    
+    h2 {
+    color: red;
+    
+    }
+    
+    #iconeDica {
+      position: fixed;
+      top: 25px;
+      right: 15px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+
+    #caixaDica {
+      display: none;
+      position: fixed;
+      top: 70px;
+      right: 45px;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      color: black;
+      font-size: 15px;
+      text-align: center;
+    }
+   
+</style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login Notebook</h2>
+    <input type="password" id="password" placeholder="Digite sua senha">
+    <button onclick="verificarSenha()">Login</button>
+</div>
+
+
+
+  <img id="iconeDica" src="Lâmpada2.png" alt="Ícone de Dica" onclick="exibirDica()">
+  <div id="caixaDica">Dica: Usuário: R2FicmllbA==</div>
+  
+<script>
+    function verificarSenha() {
+        var senhaDigitada = document.getElementById("password").value;
+        var senhaCorreta = "gabriel"; // Coloque sua senha aqui
+
+        if (senhaDigitada === senhaCorreta) {
+            window.location.href = "Enigma3.html"; // Redireciona para outra página
+        } else {
+            alert("usuário incorreto. Tente novamente.");
+        }
+    }
+    
+    function exibirDica() {
+      var caixaDica = document.getElementById("caixaDica");
+      caixaDica.style.display = "block";
+      setTimeout(function() {
+        caixaDica.style.display = "none";
+      }, 5000);
+    }
+   
+</script>
+
+</body>
+</html>
